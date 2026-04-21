@@ -13,7 +13,7 @@
       <h3 class="text-stone-800 font-semibold text-lg mt-1 truncate">{{ product.title }}</h3>
       <p class="text-stone-500 text-sm mt-1 line-clamp-2">{{ product.description }}</p>
       <div class="flex justify-between items-center mt-4">
-        <span class="text-xl font-bold text-stone-800">${{ product.price }}</span>
+        <span class="text-xl font-bold text-stone-800">Rs.{{ product.price }}</span>
         <span class="text-yellow-500 text-sm">⭐ {{ product.rating }}</span>
       </div>
     </div>

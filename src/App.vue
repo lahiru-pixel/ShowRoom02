@@ -3,7 +3,7 @@
     <!-- Navbar -->
     <nav class="fixed top-0 w-full bg-white shadow-md z-50">
       <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-stone-800 tracking-widest">SHOWROOM</h1>
+        <h1 class="text-2xl font-bold text-stone-800 tracking-widest">EG 5690</h1>
         <ul class="hidden md:flex gap-8 text-stone-600 font-medium">
           <li><RouterLink to="/" class="hover:text-stone-900">Home</RouterLink></li>
           <li><RouterLink to="/products" class="hover:text-stone-900">Products</RouterLink></li>
