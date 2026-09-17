@@ -6,7 +6,7 @@
         <h1 class="text-2xl font-bold text-stone-800 dark:text-white tracking-widest">
           SHOWROOM
         </h1>
-        <ul class="hidden md:flex gap-8 text-stone-600 dark:text-stone-300 font-medium">
+        <ul class="hidden md:flex gap-8 text-stone-600 dark:text-stone-300 font-medium items-center">
           <li><RouterLink to="/" class="hover:text-stone-900 dark:hover:text-white">Home</RouterLink></li>
           <li><RouterLink to="/products" class="hover:text-stone-900 dark:hover:text-white">Products</RouterLink></li>
           <li><RouterLink to="/about" class="hover:text-stone-900 dark:hover:text-white">About</RouterLink></li>
@@ -21,6 +21,15 @@
           >
             {{ themeStore.isDark ? '☀️' : '🌙' }}
           </button>
+          
+          <!-- Login Button (Desktop) -->
+          <RouterLink
+            to="/login"
+            class="hidden md:inline-block bg-stone-800 dark:bg-stone-200 text-white dark:text-stone-900 px-5 py-2 rounded-full font-medium hover:bg-stone-700 dark:hover:bg-white transition"
+          >
+            Login
+          </RouterLink>
+
           <!-- Mobile menu -->
           <button @click="menuOpen = !menuOpen" class="md:hidden text-stone-800 dark:text-white text-2xl">☰</button>
         </div>
@@ -31,6 +40,7 @@
         <RouterLink to="/products" @click="menuOpen=false">Products</RouterLink>
         <RouterLink to="/about" @click="menuOpen=false">About</RouterLink>
         <RouterLink to="/contact" @click="menuOpen=false">Contact</RouterLink>
+        <RouterLink to="/login" @click="menuOpen=false">Login</RouterLink>
       </div>
     </nav>
 
