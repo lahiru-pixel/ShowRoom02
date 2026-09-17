@@ -1,6 +1,6 @@
 <template>
   <div class="max-w-7xl mx-auto px-6 py-10">
-    <h2 class="text-3xl font-bold text-stone-800 mb-8">Our Products</h2>
+    <h2 class="text-3xl font-bold text-stone-800 dark:text-white mb-8">Our Products</h2>
 
     <!-- Search & Filter -->
     <div class="flex flex-col md:flex-row gap-4 mb-8">
@@ -8,11 +8,11 @@
         v-model="search"
         type="text"
         placeholder="Search products..."
-        class="border border-stone-300 rounded-full px-5 py-2 w-full md:w-96 focus:outline-none focus:ring-2 focus:ring-stone-400"
+        class="border border-stone-300 dark:border-stone-600 dark:bg-stone-800 dark:text-white rounded-full px-5 py-2 w-full md:w-96 focus:outline-none focus:ring-2 focus:ring-stone-400"
       />
       <select
         v-model="selectedCategory"
-        class="border border-stone-300 rounded-full px-5 py-2 focus:outline-none focus:ring-2 focus:ring-stone-400"
+        class="border border-stone-300 dark:border-stone-600 dark:bg-stone-800 dark:text-white rounded-full px-5 py-2 focus:outline-none focus:ring-2 focus:ring-stone-400"
       >
         <option value="">All Categories</option>
         <option v-for="cat in categories" :key="cat.slug" :value="cat.slug">
@@ -22,12 +22,12 @@
     </div>
 
     <!-- Loading -->
-    <div v-if="loading" class="text-center text-stone-400 py-20 text-xl">
+    <div v-if="loading" class="text-center text-stone-400 dark:text-stone-300 py-20 text-xl">
       Loading products...
     </div>
 
     <!-- No Results -->
-    <div v-else-if="filteredProducts.length === 0" class="text-center text-stone-400 py-20 text-xl">
+    <div v-else-if="filteredProducts.length === 0" class="text-center text-stone-400 dark:text-stone-300 py-20 text-xl">
       No products found.
     </div>
 

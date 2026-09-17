@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-5xl mx-auto px-6 py-10">
     <!-- Loading -->
-    <div v-if="loading" class="text-center text-stone-400 py-20 text-xl">
+    <div v-if="loading" class="text-center text-stone-400 dark:text-stone-300 py-20 text-xl">
       Loading product...
     </div>
 
@@ -20,8 +20,8 @@
             :key="img"
             :src="img"
             @click="selectedImage = img"
-            class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 hover:border-stone-800 transition"
-            :class="selectedImage === img ? 'border-stone-800' : 'border-transparent'"
+            class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 hover:border-stone-800 dark:hover:border-stone-200 transition"
+            :class="selectedImage === img ? 'border-stone-800 dark:border-stone-200' : 'border-transparent'"
           />
         </div>
       </div>
@@ -29,17 +29,17 @@
       <!-- Info -->
       <div>
         <span class="text-sm text-stone-400 uppercase tracking-wider">{{ product.category }}</span>
-        <h1 class="text-3xl font-bold text-stone-800 mt-2">{{ product.title }}</h1>
-        <p class="text-stone-500 mt-4 leading-relaxed">{{ product.description }}</p>
+        <h1 class="text-3xl font-bold text-stone-800 dark:text-white mt-2">{{ product.title }}</h1>
+        <p class="text-stone-500 dark:text-stone-400 mt-4 leading-relaxed">{{ product.description }}</p>
 
         <div class="flex items-center gap-4 mt-6">
-          <span class="text-4xl font-bold text-stone-800">${{ product.price }}</span>
-          <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+          <span class="text-4xl font-bold text-stone-800 dark:text-white">${{ product.price }}</span>
+          <span class="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 px-3 py-1 rounded-full text-sm">
             {{ product.discountPercentage }}% OFF
           </span>
         </div>
 
-        <div class="flex gap-6 mt-4 text-stone-500 text-sm">
+        <div class="flex gap-6 mt-4 text-stone-500 dark:text-stone-400 text-sm">
           <span>⭐ {{ product.rating }} Rating</span>
           <span>📦 {{ product.stock }} in stock</span>
           <span>🏷️ {{ product.brand }}</span>
@@ -47,14 +47,14 @@
 
         <button
           @click="addToCart"
-          class="mt-8 w-full bg-stone-800 text-white py-3 rounded-full text-lg font-medium hover:bg-stone-700 transition"
+          class="mt-8 w-full bg-stone-800 dark:bg-stone-200 text-white dark:text-stone-900 py-3 rounded-full text-lg font-medium hover:bg-stone-700 dark:hover:bg-white transition"
         >
           Add to Cart
         </button>
 
         <button
           @click="$router.back()"
-          class="mt-3 w-full border border-stone-300 text-stone-600 py-3 rounded-full text-lg hover:bg-stone-50 transition"
+          class="mt-3 w-full border border-stone-300 dark:border-stone-600 text-stone-600 dark:text-stone-300 py-3 rounded-full text-lg hover:bg-stone-50 dark:hover:bg-stone-800 transition"
         >
           ← Go Back
         </button>
@@ -90,4 +90,4 @@ const addToCart = () => {
     alert(`${product.value.title} added to cart!`)
   }
 }
-</script>
+</script> 
